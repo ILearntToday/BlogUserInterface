@@ -1,0 +1,79 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype",
+    "immutable"
+  ],
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "globals": {
+    "__DEV__": true,
+    "xmlHttp":true,
+    "document": true,
+    "addEventListener": true,
+    "removeEventListener": true,
+    "getComputedStyle": true,
+    "window":true
+  },
+  "rules": {
+    // The rules for react
+    "jsx-quotes": [2, "prefer-double"],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-quotes": 0,
+    "react/require-default-props": 0,
+    "react/sort-comp": 0,
+    // General programming
+    "import/no-extraneous-dependencies": 2,
+    "import/no-named-as-default": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    // Best practises
+//    "dont-abuse-pure-functions": 2,
+    "immutable/no-let": 0,
+    "immutable/no-mutation": 0,
+    "no-console": 2,
+    "no-multi-assignments": 0,
+    "sort-keys": 0,
+//    "no-commented-test.js": 2,
+//    "no-multi-assignment.js": 2,
+    // Flow config for files
+    "flowtype/boolean-style": [2, "boolean"],
+    "flowtype/define-flow-type": 2,
+    "flowtype/delimiter-dangle": [2, "always-multiline"],
+    "flowtype/generic-spacing": [2, "never"],
+    "flowtype/no-primitive-constructor-types": 2,
+    "flowtype/no-weak-types": [0, {
+      "any": true,
+      "Object": false,
+      "Function": false
+    }],
+    "flowtype/require-parameter-type": [2, { "excludeArrowFunctions": true }],
+    "flowtype/require-return-type": [2, "always", { "excludeArrowFunctions": true }],
+    "flowtype/require-valid-file-annotation": [2, "always", { "annotationStyle": "line" }],
+    "flowtype/semi": [2, "always"],
+    "flowtype/sort-keys": [2, "asc"],
+    "flowtype/space-after-type-colon": [2, "always"],
+    "flowtype/space-before-generic-bracket": [2],
+    "flowtype/space-before-type-colon": [2],
+    "flowtype/union-intersection-spacing": [2],
+    // The rules to be fixed
+    "import/prefer-default-export": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "max-len": 0,
+    "no-restricted-globals": 0,
+    "prefer-promise-reject-errors": 0,
+    "react/forbid-prop-types": 0,
+    "react/no-array-index-key": 0,
+    "react/no-string-refs": 0
+  }
+}

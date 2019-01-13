@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Auto generated: Don't modify.
 
 // This optional code is used to register a service worker.
