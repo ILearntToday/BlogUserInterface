@@ -5,5 +5,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = document.getElementById('root');
+if (root !== null) {
+  ReactDOM.render(<App />, root);
+}
+
 serviceWorker.unregister();
