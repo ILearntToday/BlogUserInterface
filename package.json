@@ -52,6 +52,7 @@
     "build": "node scripts/build.js",
     "coverage": "npm test -- --coverage",
     "start": "node scripts/start.js",
+    "flow": "./node_modules/flow-bin/cli.js check",
     "lint": "./node_modules/eslint/bin/eslint.js src/ test/",
     "lint::fix": "npm run lint -- --fix",
     "test": "node scripts/test.js"
@@ -60,8 +61,12 @@
     "extends": "react-app"
   },
   "nyc": {
-    "exclude": ["!**/src/node_modules/**/*.{js,jsx}"],
-    "include": [ "**/test/**/*.{js,jsx}"]
+    "exclude": [
+      "!**/src/node_modules/**/*.{js,jsx}"
+    ],
+    "include": [
+      "**/test/**/*.{js,jsx}"
+    ]
   },
   "browserslist": [
     ">0.2%",
@@ -129,10 +134,12 @@
     "eslint-loader": "^2.1.1",
     "eslint-plugin-immutable": "^1.0.0",
     "eslint-plugin-react": "^7.12.3",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "flow-bin": "^0.90.0"
   },
   "pre-commit": [
     "lint",
+    "flow",
     "coverage"
   ]
 }

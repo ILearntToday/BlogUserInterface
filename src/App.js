@@ -3,7 +3,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component {
+
+type Props = {};
+
+class App extends Component<Props> {
   render() {
     return (
       <div className="App">
