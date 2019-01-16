@@ -1,17 +1,15 @@
-# base image
-FROM node:9.6.1
-
-# set working directory
-RUN mkdir /usr/src/app
+# Stage 1 - the build process
+FROM node:11.6.0 as build-deps
 WORKDIR /usr/src/app
+COPY package.json ./
+RUN npm install
+COPY . ./
+RUN npm run build
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+# Stage 2 - the production environment
+FROM nginx:1.15-alpine
+COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
+EXPOSE 80
 
-# install and cache app dependencies
-COPY package.json /usr/src/app/package.json
-RUN npm install --silent
-RUN npm install react-scripts@1.1.1 -g --silent
-
-# start app
-CMD ["npm", "start"]
+#CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
+CMD ["nginx", "-g", "daemon off;"]
