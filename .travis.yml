@@ -12,6 +12,7 @@ script:
     fi
   - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
     bash ./build_docker.sh;
-    docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
-    docker push ilearnttoday/bloguserinterface:tagname ;
     fi
+branches:
+  only:
+    - master
