@@ -4,13 +4,14 @@ node_js:
 services:
   - 'docker'
 script:
-  - npm install
-  - npm run lint
-  - npm run flow
-  - npm run coverage
-build:
-  - './build_docker.sh'
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    npm install;
+    npm run lint;
+    npm run flow;
+    npm run coverage;
+    fi
+  - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+    bash ./build_docker.sh;
     docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
     docker push ilearnttoday/bloguserinterface:tagname ;
     fi
