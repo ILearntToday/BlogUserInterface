@@ -16,3 +16,8 @@ script:
 branches:
   only:
     - master
+notifications:
+  slack: ilearnttoday:"$SLACK_TOKEN"
+    on_pull_requests: true
+    on_success: change
+    on_failure: always
