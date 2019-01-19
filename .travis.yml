@@ -16,3 +16,5 @@ script:
 branches:
   only:
     - master
+notifications:
+  slack: ilearnttoday:G3jmA5xbV126snb6RWgg6Ywg
