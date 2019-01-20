@@ -1,8 +1,8 @@
 // @flow
 /* eslint-disable */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
-
+import {connect} from "react-redux";
 
 type Props = {};
 
@@ -11,11 +11,17 @@ class App extends Component<Props> {
     return (
       <div className="App">
         <header className="App-header">
-          <p> I Learnt Today </p>
+          <p> I Learnt Today {} </p>
         </header>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ...state
+  };
+};
+
+export default connect(mapStateToProps)(App);
