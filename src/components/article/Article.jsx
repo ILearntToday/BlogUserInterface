@@ -2,12 +2,16 @@
 import React from 'react';
 import './Article.css';
 
-const Article = function (props: Object): Object {
+type Props = {
+  article: ArticleType,
+};
+
+const Article = function (props: Props): Object {
   const { article } = props;
   return (
     <div className="Single-article">
-      <h4>{article.blogTitle.toString()}</h4>
-      <p>{article.shortDescription.toString()}</p>
+      <h4>{article.blogTitle}</h4>
+      <p>{article.shortDescription}</p>
     </div>
   );
 };
