@@ -5,16 +5,7 @@ import { connect } from 'react-redux';
 import Article from '../article/Article';
 
 type Props = {
-  articles: Array<Object>,
-};
-
-const Articles = function (props: Props): Object {
-  const { articles } = props;
-  return (
-    <div>
-      {articles.map(a => <Article article={a} />)}
-    </div>
-  );
+  articles: Array<ArticleType>,
 };
 
 function mapStateToProps(state: Object): Object {
@@ -22,5 +13,14 @@ function mapStateToProps(state: Object): Object {
     articles: state.articles,
   };
 }
+
+const Articles = function (props: Props): Object {
+  const { articles } = props;
+  return (
+    <div>
+      {articles.map(article => <Article key={article.id} article={article} />)}
+    </div>
+  );
+};
 
 export default connect(mapStateToProps)(Articles);
