@@ -1,27 +1,15 @@
 // @flow
-/* eslint-disable */
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
-import {connect} from "react-redux";
+import Articles from './components/articles/Articles';
 
-type Props = {};
+export const App = () => (
+  <div className="App">
+    <header className="App-header">
+      <p> I Learnt Today </p>
+      <Articles />
+    </header>
+  </div>
+);
 
-class App extends Component<Props> {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <p> I Learnt Today {} </p>
-        </header>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    ...state
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
