@@ -22,7 +22,7 @@ const Articles = function (props: Props): Object {
 
   return (
     <div className="list-articles">
-      {articles.map(article => <Article className="article" key={article.id} article={article}/>)}
+      {articles.map(article => <Article className="article" key={article.id} article={article} />)}
     </div>
   );
 };
