@@ -36,14 +36,12 @@
     "jsx-a11y/click-events-have-key-events": 0,
     "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
     // Best practises
-//    "dont-abuse-pure-functions": 2,
     "immutable/no-let": 0,
     "immutable/no-mutation": 0,
     "no-console": 2,
     "no-multi-assignments": 0,
     "sort-keys": 0,
-//    "no-commented-test.js": 2,
-//    "no-multi-assignment.js": 2,
+    "no-unused-expressions": 0,
     // Flow config for files
     "flowtype/boolean-style": [2, "boolean"],
     "flowtype/define-flow-type": 2,

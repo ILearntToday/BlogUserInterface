@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Article from '../article/Article';
+import Article from '../Article/Article';
 
 type Props = {
   articles: Array<ArticleType>,
@@ -16,9 +16,13 @@ function mapStateToProps(state: Object): Object {
 
 const Articles = function (props: Props): Object {
   const { articles } = props;
+  if (!articles.length) {
+    return <span className="empty-message">No articles to display</span>;
+  }
+
   return (
-    <div>
-      {articles.map(article => <Article key={article.id} article={article} />)}
+    <div className="list-articles">
+      {articles.map(article => <Article className="article" key={article.id} article={article}/>)}
     </div>
   );
 };

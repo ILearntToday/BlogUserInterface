@@ -1,12 +1,12 @@
 // @flow
 import React from 'react';
 import './App.css';
-import Articles from './components/articles/Articles';
+import Articles from '../Articles/Articles';
 
 export const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <p> I Learnt Today </p>
+  <div className="app">
+    <header className="app-header">
+      <p>I Learnt Today</p>
       <Articles />
     </header>
   </div>
