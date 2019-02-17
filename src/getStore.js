@@ -4,7 +4,7 @@ import { routerReducer as router } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import fetchArticlesSaga from './sagas/fetch-articles';
+import rootSaga from './sagas/rootSaga';
 import * as reducers from './reducers';
 
 export default function (defaultState: Object = {}): Object {
@@ -21,7 +21,7 @@ export default function (defaultState: Object = {}): Object {
     router,
   }), defaultState, composeWithDevTools(applyMiddleware(...middlewareChain)));
 
-  sagaMiddleware.run(fetchArticlesSaga);
+  sagaMiddleware.run(rootSaga);
 
   return store;
 }

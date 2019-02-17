@@ -1,11 +1,13 @@
 // @flow
 import unionWith from 'lodash/unionWith';
+import { LOAD_ARTICLES } from '../constants/actionTypes';
 
-export const articles = (state: Object = [], { type, articles: fetchedArticles }: Object) => {
+const defaultState = [];
+export const articles = (state: Object = defaultState, action: Object) => {
   const articleEquality = (a = {}, b = {}) => a.id === b.id;
 
-  if (type === 'FETCHED_ARTICLES') {
-    return unionWith(state, fetchedArticles, articleEquality);
+  if (action.type === LOAD_ARTICLES) {
+    return unionWith(state, action.payload, articleEquality);
   }
   return state;
 };

@@ -6,12 +6,9 @@ import Provider from 'react-redux/es/components/Provider';
 import App from './components/App/App';
 import getStore from './getStore';
 import * as serviceWorker from './serviceWorker';
+import { fetchArticles } from './actions/fetchArticles';
 
 const store = getStore();
-const fetchArticles = () => {
-  store.dispatch({ type: 'REQUEST_FETCH_ARTICLES' });
-};
-
 const root = document.getElementById('root');
 if (root !== null) {
   ReactDOM.render(
@@ -23,4 +20,4 @@ if (root !== null) {
 }
 
 serviceWorker.unregister();
-fetchArticles();
+store.dispatch(fetchArticles());
