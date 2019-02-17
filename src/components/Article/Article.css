@@ -1,4 +1,4 @@
-.Single-article {
+.single-article {
   border: var(--theme-container-border, 1px solid #d6d6d6);
   box-shadow: var(--theme-container-box-shadow, 3px 3px 0px #bababa);
   padding: 50px;

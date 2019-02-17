@@ -9,9 +9,9 @@ type Props = {
 const Article = function (props: Props): Object {
   const { article } = props;
   return (
-    <div className="Single-article">
-      <h4>{article.title}</h4>
-      <p>{article.shortDescription}</p>
+    <div className="single-article">
+      <h4 className="article-title">{article.title}</h4>
+      <p className="article-short-description">{article.shortDescription}</p>
     </div>
   );
 };
