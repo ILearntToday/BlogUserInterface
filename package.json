@@ -101,7 +101,9 @@
     "collectCoverageFrom": [
       "src/components/**/*.js",
       "src/components/**/*.jsx",
-      "src/sagas/**/*.js"
+      "src/sagas/**/*.js",
+      "src/actions/**/*.js",
+      "src/reducers/**/*.js"
     ],
     "coverageReporters": [
       "lcov",
